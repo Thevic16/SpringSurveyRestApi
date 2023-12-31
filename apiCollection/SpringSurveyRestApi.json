@@ -1,0 +1,367 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "4cece249-8028-48d5-9112-a2d1772f4ab3",
+        "name": "SpringSurveyRestApi"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "c5b75d94-f3ca-49e5-8361-930dd7eeb221",
+            "name": "Survey related"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\"description\": \"Most Popular Programming Language Today\",\n\"options\":[\"Java\", \"Python\", \"Go\", \"Scala\"],\n\"correctAnswer\": \"Python\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys/${surveyId}/questions"
+                },
+                "id": "27d18fa5-491b-4f99-bd0e-057a106f1302",
+                "name": "addNewSurveyQuestion",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\"description\": \"Most Popular Programming Language Today\",\n\"options\":[\"Java\", \"Python\", \"Go\", \"Scala\"],\n\"correctAnswer\": \"Python\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys/${surveyId}/questions/${questionId}"
+                },
+                "id": "b27a127e-7256-421c-9036-3b3ca0caa82b",
+                "name": "deleteSurveyQuestion",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys/${surveyId}/questions"
+                },
+                "id": "c84054ce-cd80-4805-b90f-4560e2445569",
+                "name": "retrieveAllSurveyQuestions",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys"
+                },
+                "id": "62979d40-d502-4cce-a395-e06ff2afef80",
+                "name": "retrieveAllSurveys",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys/${surveyId}/questions/${questionId}"
+                },
+                "id": "54f47031-c715-4156-84ba-efcb0d926bec",
+                "name": "retrieveSpecificSurveyQuestion",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/surveys/${surveyId}"
+                },
+                "id": "665709bd-4b92-4a4c-98ff-860f7e0f533c",
+                "name": "retrieveSurveyById",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "d375a7e0-3f8d-4885-a798-7c398f3c57d9",
+            "name": "UserDetails related"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"name\": \"Victor\",\n  \"role\": \"Admin\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/userDetailses"
+                },
+                "id": "6ca209f0-cf8a-4e09-95c9-ff6055c27be0",
+                "name": "createUserDetail",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8080",
+                  "path": "/userDetailses"
+                },
+                "id": "7f7cdc41-1bca-483e-90f4-d09d3ca60737",
+                "name": "userDetailses",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46cGFzc3dvcmQ="
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "f2bfb93d-3d5f-449a-8337-b2269e37132d",
+      "name": "SpringSurveyRestApi",
+      "variables": {
+        "853952db-32b4-431c-9c42-cc2d4b08aa3e": {
+          "createdAt": "2023-12-29T11:52:38.260-04:00",
+          "name": "questionId",
+          "value": "4016372187",
+          "enabled": true,
+          "private": false
+        },
+        "30737d25-c244-46ca-a984-f69eb94bf503": {
+          "createdAt": "2023-12-29T11:52:58.317-04:00",
+          "name": "surveyId",
+          "value": "Survey1",
+          "enabled": true,
+          "private": false
+        }
+      }
+    }
+  ]
+}
